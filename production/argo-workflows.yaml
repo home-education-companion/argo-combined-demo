@@ -16,7 +16,7 @@ spec:
         server: 
           ingress:
             hosts:
-              - acme.com
+              - argo-workflows.82.6.143.106.nip.io
             enabled: true
             ingressClassName: nginx
         controller:
