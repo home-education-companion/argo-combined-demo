@@ -5,6 +5,8 @@ kind: EventSource
 metadata:
   name: github
 spec:
+  template:
+    serviceAccountName: argo-events-sa
   service:
     ports:
     - port: 12000
