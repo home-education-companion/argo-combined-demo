@@ -13,6 +13,7 @@ spec:
     eventName: argo-combined-app
   triggers:
   - template:
+      serviceAccountName: argo-events-sa
       name: trigger
       argoWorkflow:
         group: argoproj.io
