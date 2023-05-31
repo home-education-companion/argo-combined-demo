@@ -189,17 +189,3 @@ spec:
                 dependencyName: github
                 dataKey: body.ref
               dest: spec.templates.2.steps.0.0.arguments.parameters.0.value
-
-            # slack messages
-            - src:
-                dependencyName: github
-                dataKey: body.repository.owner.name
-              dest: spec.templates.0.dag.tasks.5.arguments.parameters.1.value
-            - src:
-                dependencyName: github
-                dataKey: body.repository.owner.name
-              dest: spec.templates.0.dag.tasks.6.arguments.parameters.1.value
-            - src:
-                dependencyName: github
-                dataKey: body.repository.owner.name
-              dest: spec.templates.0.dag.tasks.7.arguments.parameters.1.value
