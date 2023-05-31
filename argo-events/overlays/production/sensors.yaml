@@ -75,20 +75,14 @@ spec:
                       clusterScope: true
                     arguments:
                       parameters:
-                      - name: environment
-                        value: staging
-                      - name: repo_owner
-                        value: home-education-companion
-                      - name: repo_name
-                        value: argo-combined-demo
-                      - name: image_owner
-                        value: homeedcomp
-                      - name: image_name
-                        value: ""
-                      - name: tag
-                        value: ""
+                        - name: environment
+                          value: staging
+                        - name: repo_commit_id
+                          value: ""
+                        - name: repo_full_name
+                          value: home-education-companion/argo-combined-app
                     dependencies:
-                    - build
+                      - build
                   - name: promote-production
                     templateRef:
                       name: promote
@@ -96,29 +90,23 @@ spec:
                       clusterScope: true
                     arguments:
                       parameters:
-                      - name: environment
-                        value: production
-                      - name: repo_owner
-                        value: home-education-companion
-                      - name: repo_name
-                        value: argo-combined-demo
-                      - name: image_owner
-                        value: homeedcomp
-                      - name: image_name
-                        value: ""
-                      - name: tag
-                        value: ""
+                        - name: environment
+                          value: production
+                        - name: repo_commit_id
+                          value: ""
+                        - name: repo_full_name
+                          value: home-education-companion/argo-combined-app
                     dependencies:
-                    - test-functional
-                    - test-integration
+                      - test-functional
+                      - test-integration
                   - name: test-functional
                     template: test
                     dependencies:
-                    - promote-staging
+                      - promote-staging
                   - name: test-integration
                     template: test
                     dependencies:
-                    - promote-staging
+                      - promote-staging
               - name: test
                 script:
                   image: alpine
@@ -127,8 +115,8 @@ spec:
                     echo This is a testing simulation...
                     sleep 5
                   volumeMounts:
-                  - name: github-access
-                    mountPath: /.github/
+                    - name: github-access
+                      mountPath: /.github/
         parameters:
         - src:
             dependencyName: github
@@ -150,29 +138,9 @@ spec:
         - src:
             dependencyName: github
             dataKey: body.after
-          dest: spec.templates.0.dag.tasks.0.arguments.parameters.4.value
-        - src:
-            dependencyName: github
-            dataKey: body.repository.name
-          dest: spec.templates.0.dag.tasks.1.arguments.parameters.4.value
+          dest: spec.templates.0.dag.tasks.1.arguments.parameters.2.value
         - src:
             dependencyName: github
             dataKey: body.after
-          dest: spec.templates.0.dag.tasks.1.arguments.parameters.5.value
-        - src:
-            dependencyName: github
-            dataKey: body.after
-          dest: spec.templates.0.dag.tasks.1.arguments.parameters.6.value
-        - src:
-            dependencyName: github
-            dataKey: body.repository.name
-          dest: spec.templates.0.dag.tasks.2.arguments.parameters.4.value
-        - src:
-            dependencyName: github
-            dataKey: body.after
-          dest: spec.templates.0.dag.tasks.2.arguments.parameters.5.value
-        - src:
-            dependencyName: github
-            dataKey: body.after
-          dest: spec.templates.0.dag.tasks.2.arguments.parameters.6.value
+          dest: spec.templates.0.dag.tasks.2.arguments.parameters.2.value
 
