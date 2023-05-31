@@ -137,9 +137,9 @@ spec:
         - src:
             dependencyName: github
             dataKey: body.after
-          dest: spec.templates.0.dag.tasks.1.arguments.parameters.2.value
+          dest: spec.templates.0.dag.tasks.1.arguments.parameters.1.value
         - src:
             dependencyName: github
             dataKey: body.after
-          dest: spec.templates.0.dag.tasks.2.arguments.parameters.2.value
+          dest: spec.templates.0.dag.tasks.2.arguments.parameters.1.value
 
