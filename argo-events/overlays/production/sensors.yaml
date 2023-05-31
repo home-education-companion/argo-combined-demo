@@ -161,10 +161,18 @@ spec:
           dest: spec.templates.0.dag.tasks.1.arguments.parameters.5.value
         - src:
             dependencyName: github
+            dataKey: body.after
+          dest: spec.templates.0.dag.tasks.1.arguments.parameters.6.value
+        - src:
+            dependencyName: github
             dataKey: body.repository.name
           dest: spec.templates.0.dag.tasks.2.arguments.parameters.4.value
         - src:
             dependencyName: github
             dataKey: body.after
           dest: spec.templates.0.dag.tasks.2.arguments.parameters.5.value
+        - src:
+            dependencyName: github
+            dataKey: body.after
+          dest: spec.templates.0.dag.tasks.2.arguments.parameters.6.value
 
