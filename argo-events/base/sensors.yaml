@@ -131,8 +131,8 @@ spec:
           dest: spec.templates.0.dag.tasks.0.arguments.parameters.2.value
         - src:
             dependencyName: github
-            dataKey: body.repository.name
-          dest: spec.templates.0.dag.tasks.0.arguments.parameters.3.value
+            dataKey: body.after
+          dest: spec.templates.0.dag.tasks.0.arguments.parameters.4.value
           operation: append
         - src:
             dependencyName: github
