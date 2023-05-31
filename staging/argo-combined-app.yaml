@@ -10,7 +10,7 @@ spec:
   source:
     path: kustomize/overlays/staging
     repoURL: https://github.com/home-education-companion/argo-combined-app
-    targetRevision: HEAD
+    targetRevision: staging
     kustomize:
       images:
       - homeedcomp/argo-combined-app:latest
