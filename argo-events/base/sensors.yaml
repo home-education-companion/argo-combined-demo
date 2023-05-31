@@ -64,7 +64,7 @@ spec:
                       - name: repo_commit_id
                         value: ""
                       - name: container_image
-                        value: homeedcomp/argo-combined-app
+                        value: homeedcomp/argo-combined-demo
                       - name: container_tag
                         value: ""
                   - name: promote-staging
@@ -79,7 +79,7 @@ spec:
                       - name: repo_commit_id
                         value: ""
                       - name: repo_full_name
-                        value: home-education-companion/argo-combined-app
+                        value: home-education-companion/argo-combined-demo
                     dependencies:
                     - build
                   - name: promote-production

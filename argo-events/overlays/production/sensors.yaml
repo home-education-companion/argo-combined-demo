@@ -80,7 +80,7 @@ spec:
                         - name: repo_commit_id
                           value: ""
                         - name: repo_full_name
-                          value: home-education-companion/argo-combined-app
+                          value: home-education-companion/argo-combined-demo
                     dependencies:
                       - build
                   - name: promote-production
@@ -95,7 +95,7 @@ spec:
                         - name: repo_commit_id
                           value: ""
                         - name: repo_full_name
-                          value: home-education-companion/argo-combined-app
+                          value: home-education-companion/argo-combined-demo
                     dependencies:
                       - test-functional
                       - test-integration
