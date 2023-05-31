@@ -64,7 +64,7 @@ spec:
                       - name: repo_commit_id
                         value: ""
                       - name: container_image
-                        value: CHANGE_ME_IMAGE_OWNER/
+                        value: Jason
                       - name: container_tag
                         value: ""
                   - name: promote-staging
@@ -81,10 +81,12 @@ spec:
                       - name: repo_name
                         value: argo-combined-demo
                       - name: image_owner
-                        value: CHANGE_ME_IMAGE_OWNER
+                        value: Jason
                       - name: image_name
                         value: ""
                       - name: tag
+                        value: ""
+                      - name: repo_commit_id
                         value: ""
                     dependencies:
                     - build
@@ -102,10 +104,12 @@ spec:
                       - name: repo_name
                         value: argo-combined-demo
                       - name: image_owner
-                        value: CHANGE_ME_IMAGE_OWNER
+                        value: Jason
                       - name: image_name
                         value: ""
                       - name: tag
+                        value: ""
+                      - name: repo_commit_id
                         value: ""
                     dependencies:
                     - test-functional
@@ -160,10 +164,18 @@ spec:
           dest: spec.templates.0.dag.tasks.1.arguments.parameters.5.value
         - src:
             dependencyName: github
+            dataKey: body.after
+          dest: spec.templates.0.dag.tasks.1.arguments.parameters.6.value
+        - src:
+            dependencyName: github
             dataKey: body.repository.name
           dest: spec.templates.0.dag.tasks.2.arguments.parameters.4.value
         - src:
             dependencyName: github
             dataKey: body.after
           dest: spec.templates.0.dag.tasks.2.arguments.parameters.5.value
+        - src:
+            dependencyName: github
+            dataKey: body.after
+          dest: spec.templates.0.dag.tasks.1.arguments.parameters.6.value
 
