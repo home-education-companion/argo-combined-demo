@@ -13,8 +13,8 @@ spec:
     targetRevision: HEAD
     kustomize:
       images:
-      - name: homeedcomp/argo-combined-app
-        newTag: "latest"
+        - name: homeedcomp/argo-combined-app
+          newTag: "latest"
   destination:
     server: https://kubernetes.default.svc
     namespace: staging

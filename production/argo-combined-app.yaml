@@ -10,10 +10,11 @@ spec:
   source:
     path: kustomize/overlays/production
     repoURL: https://github.com/home-education-companion/argo-combined-app
-    targetRevision: production
+    targetRevision: HEAD
     kustomize:
-      - name: homeedcomp/argo-combined-app
-        newTag: "latest"
+      images:
+        - name: homeedcomp/argo-combined-app
+          newTag: "latest"
   destination:
     server: https://kubernetes.default.svc
     namespace: HEAD
