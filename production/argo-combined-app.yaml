@@ -16,7 +16,7 @@ spec:
         newTag: "latest"
   destination:
     server: https://kubernetes.default.svc
-    namespace: production
+    namespace: HEAD
   syncPolicy:
     automated:
       selfHeal: true
