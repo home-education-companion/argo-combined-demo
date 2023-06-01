@@ -78,7 +78,7 @@ spec:
                               - name: environment
                                 value: "staging"
                               - name: repo_commit_id
-                                value:
+                                value: ""
                               - name: repo_full_name
                                 value: "home-education-companion/argo-combined-demo"
                           dependencies:
@@ -93,7 +93,7 @@ spec:
                               - name: environment
                                 value: "production"
                               - name: repo_commit_id
-                                value:
+                                value: ""
                               - name: repo_full_name
                                 value: "home-education-companion/argo-combined-demo"
                           dependencies:

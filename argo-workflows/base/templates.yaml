@@ -53,7 +53,7 @@ spec:
         echo BEFORE:
         cat argo-combined-app.yaml
         echo AFTER:
-        cat argo-combined-app.yaml | sed -e 's@homeedcomp/argo-combined-app.*@homeedcomp/argo-combined-app:"{{inputs.parameters.repo_commit_id}}"@g'| tee argo-combined-app.yaml
+        cat argo-combined-app.yaml | sed -e 's@homeedcomp/argo-combined-app.*@homeedcomp/argo-combined-app:{{inputs.parameters.repo_commit_id}}@g'| tee argo-combined-app.yaml
         git config user.name "$(cat /.github/user)"
         git config user.email "$(cat /.github/email)"
         git commit -a -m "Upgraded {{inputs.parameters.environment}}/argo-combined-app.yaml with the repo_commit_id {{inputs.parameters.repo_commit_id}}"
