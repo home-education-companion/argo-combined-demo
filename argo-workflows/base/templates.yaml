@@ -57,7 +57,7 @@ spec:
         git config user.name "$(cat /.github/user)"
         git config user.email "$(cat /.github/email)"
         git commit -a -m "Upgraded {{inputs.parameters.environment}}/argo-combined-app.yaml with the repo_commit_id {{inputs.parameters.repo_commit_id}}"
-        git push -u origin {{inputs.parameters.environment}} -f
+        git push -u origin master -f
       volumeMounts:
       - name: github-access
         mountPath: /.github/
