@@ -13,7 +13,7 @@ spec:
     targetRevision: HEAD
     kustomize:
       images:
-        - homeedcomp/argo-combined-app:358a3d25f0a914c4a79593a4ddcd627769b5dc5f
+        - homeedcomp/argo-combined-app:3c08e6f321cc60090d1ea44959a477ef47eb8b5c
   destination:
     server: https://kubernetes.default.svc
     namespace: HEAD
