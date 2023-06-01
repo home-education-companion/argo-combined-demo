@@ -13,8 +13,7 @@ spec:
     targetRevision: HEAD
     kustomize:
       images:
-        - name: homeedcomp/argo-combined-app
-          newTag: "latest"
+        - homeedcomp/argo-combined-app:latest
   destination:
     server: https://kubernetes.default.svc
     namespace: HEAD
