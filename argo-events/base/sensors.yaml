@@ -80,7 +80,7 @@ spec:
                               - name: repo_commit_id
                                 value: ""
                               - name: repo_full_name
-                                value: ""
+                                value: "home-education-companion/argo-combined-demo"
                           dependencies:
                             - build-step
                         - name: promote-production
@@ -95,7 +95,7 @@ spec:
                               - name: repo_commit_id
                                 value: ""
                               - name: repo_full_name
-                                value: ""
+                                value: "home-education-companion/argo-combined-demo"
                           dependencies:
                             - test-functional
                             - test-integration
@@ -169,20 +169,12 @@ spec:
                 dependencyName: github
                 dataKey: body.after
               dest: spec.templates.0.dag.tasks.1.arguments.parameters.1.value
-            - src:
-                dependencyName: github
-                dataKey: body.repository.full_name
-              dest: spec.templates.0.dag.tasks.1.arguments.parameters.2.value
 
             # promote-production
             - src:
                 dependencyName: github
                 dataKey: body.after
               dest: spec.templates.0.dag.tasks.2.arguments.parameters.1.value
-            - src:
-                dependencyName: github
-                dataKey: body.repository.full_name
-              dest: spec.templates.0.dag.tasks.2.arguments.parameters.2.value
 
             # py-check-condition
             - src:

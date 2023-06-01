@@ -49,15 +49,14 @@ spec:
         set -e
         mkdir gitrepo
         git clone --depth=1 https://$(cat /.github/user):$(cat /.github/token)@github.com/{{inputs.parameters.repo_full_name}} gitrepo
-        cd gitrepo/kustomize/overlays/{{inputs.parameters.environment}}
+        cd gitrepo/{{inputs.parameters.environment}}
         echo BEFORE:
-        cat kustomization.yaml
+        cat argo-combined-app.yaml
         echo AFTER:
-        cat kustomization.yaml | sed -e 's@newTag.*@newTag: "{{inputs.parameters.repo_commit_id}}"@g'| tee kustomization.yaml
+        cat argo-combined-app.yaml | sed -e 's@newTag.*@newTag: "{{inputs.parameters.repo_commit_id}}"@g'| tee argo-combined-app.yaml
         git config user.name "$(cat /.github/user)"
         git config user.email "$(cat /.github/email)"
-        git commit -a -m "Upgraded kustomize/overlays/{{inputs.parameters.environment}}/kustomization.yaml with the repo_commit_id {{inputs.parameters.repo_commit_id}}"
-        git checkout -b {{inputs.parameters.environment}}
+        git commit -a -m "Upgraded {{inputs.parameters.environment}}/argo-combined-app.yaml with the repo_commit_id {{inputs.parameters.repo_commit_id}}"
         git push -u origin {{inputs.parameters.environment}} -f
       volumeMounts:
       - name: github-access
